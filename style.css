@@ -1,0 +1,64 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    /* grid-template-columns: repeat(4, 25%); */
+    grid-template-columns: repeat(2, 4fr) 1fr 2fr;
+    /* grid-template-rows: 65px auto auto auto 65px; */
+    /* grid-template-rows: 65px repeat(3, auto) 65px; */
+    grid-template-rows: 65px repeat(4, minmax(100px, auto)) 65px;
+    grid-template-areas: 
+        "header header header header"
+        ". . . ."
+        "main main . aside"
+        "main main . aside"
+        ". . . ."
+        "footer footer footer footer";
+}
+
+header {
+    background-color: #212529;
+    color: white;
+    grid-area: header;
+    padding: 0 20px;
+}
+
+main {
+    grid-area: main;
+    margin-left: 20px;
+}
+
+aside {
+    grid-area: aside;
+}
+
+aside nav {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+}
+
+aside nav a {
+    border-left: 5px solid transparent;
+    color: black;
+    cursor: pointer;
+    display: block;
+    padding: 20px 0;
+    text-decoration: none;
+    text-align: right;
+    width: 100%;
+}
+
+aside nav a:hover {
+    border-color: black;
+}
+
+footer {
+    background-color: #212529;
+    color: white;
+    grid-area: footer;
+}
