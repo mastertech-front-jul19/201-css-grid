@@ -6,7 +6,7 @@ body {
 .grid {
     display: grid;
     /* grid-template-columns: repeat(4, 25%); */
-    grid-template-columns: repeat(2, 4fr) 1fr 2fr;
+    grid-template-columns: 1fr repeat(2, 3fr) 1fr;
     /* grid-template-rows: 65px auto auto auto 65px; */
     /* grid-template-rows: 65px repeat(3, auto) 65px; */
     grid-template-rows: 65px repeat(4, minmax(100px, auto)) 65px;
@@ -43,21 +43,19 @@ aside {
 }
 
 aside nav {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
     padding-right: 10px;
 }
 
 aside nav a {
-    border-left: 5px solid transparent;
+    border-bottom: 5px solid transparent;
     color: black;
     cursor: pointer;
     display: block;
     padding: 20px 0;
     text-decoration: none;
-    text-align: right;
-    width: 100%;
 }
 
 aside nav a:hover {
@@ -77,6 +75,8 @@ footer {
     }
 
     .grid {
+        grid-template-columns: repeat(2, 4fr) 1fr 2fr;
+        grid-template-rows: 65px repeat(4, minmax(100px, auto)) 65px;
         grid-template-areas:  
             "header header header header"
             ". . . ."
@@ -86,8 +86,17 @@ footer {
             "footer footer footer footer";
     }
 
+    aside nav {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        padding-right: 10px;
+    }
 
-
-
-
+    aside nav a {
+        border-bottom: 0;
+        border-left: 5px solid transparent;
+        text-align: right;
+        width: 100%;
+    }
 }
